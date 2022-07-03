@@ -1,0 +1,263 @@
+
+
+.login-wrap{
+
+	width:100%;
+	margin:auto;
+	max-width:525px;
+	min-height:550px;
+	position:relative;
+	
+	
+}
+.login{
+	margin-top: 80px;
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:90px 70px 50px 70px;
+	background:lightsteelblue;
+}
+.login .sign-in-htm,
+.login .sign-up-htm{
+	top:10px;
+	left:50px;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(140deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+	font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+.login .sign-in,
+.login .sign-up,
+.login-form .group .check{
+	display:none;
+}
+.login .tab,
+.login-form .group .label,
+.login-form .group .button{
+	text-transform:uppercase;
+}
+.login .tab{
+	font-size:22px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+.login .sign-in:checked + .tab,
+.login .sign-up:checked + .tab{
+	color:rgb(255, 251, 251);
+	border-color:#0337e0;
+}
+.login-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.login-form .group{
+	margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+	width:100%;
+	color:rgb(0, 0, 0);
+	display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+    
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgb(255, 255, 255);
+}
+.login-form .group input[data-type="password"]{
+
+	-webkit-text-security:circle;
+}
+.login-form .group .label{
+	color:rgb(255, 255, 255);
+	font-size:12px;
+}
+.login-form .group .button{
+	border-color:rgb(255, 255, 255);
+}
+.login-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:rgb(255, 255, 255);
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+	color:rgb(0, 0, 0);
+}
+.login-form .group .check:checked + label .icon{
+	border-color:lightyellow;
+}
+.login-form .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.login .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+	transform:rotate(0);
+}
+.login .sign-up:checked + .tab + .login-form .sign-up-htm{
+	transform:rotate(0);
+}
+
+
+.hr{
+	height:2px;
+	margin:30px 0 30px 0;
+	background:rgba(0, 0, 0, 0.2);
+}
+
+.foot-lnk{
+	text-align:center;
+}  
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    a:hover {
+        opacity: 0.7;
+    }
+    
+    .logo {
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+        background: #0337e0;
+        height: 8vh;
+    }
+    
+    main {
+        background: url("") no-repeat center center;
+        background-size: cover;
+        height: 92vh;
+    }
+    
+    .nav-list {
+        list-style: none;
+        display: flex;
+    }
+    
+    .nav-list li {
+        letter-spacing: 3px;
+        margin-left: 32px;
+    }
+    
+    .mobile-menu {
+        display: none;
+        cursor: pointer;
+    }
+    
+    .mobile-menu div {
+        width: 32px;
+        height: 2px;
+        background: #fff;
+        margin: 8px;
+        transition: 0.3s;
+    }
+    
+    @media (max-width: 999px) {
+        body {
+            overflow-x: hidden;
+        }
+    
+        .nav-list {
+            position: absolute;
+            top: 8vh;
+            right: 0;
+            width: 50vw;
+            height: 92vh;
+            background: #0337e0;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in;
+        }
+    
+        .nav-list li {
+            margin-left: 0;
+            opacity: 0;
+        }
+    
+        .mobile-menu {
+            display: block;
+        }
+    }
+    
+    .nav-list.active {
+        transform: translateX(0);
+    }
+    
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+    
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .mobile-menu.active .line1 {
+        transform: rotate(-45deg) translate(-8px, 8px);
+    }
+    
+    .mobile-menu.active .line2 {
+        opacity: 0;
+    }
+    
+    .mobile-menu.active .line3 {
+        transform: rotate(45deg) translate(-5px, -7px);
+    }
